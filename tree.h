@@ -10,8 +10,11 @@ public:
 	tree *right;
 	tree();
 	tree(char value);
-	void add_left(tree root, char value);
-	void add_right(tree root, char value);
-}
+	void add_left_node(char value);
+	void add_right_node(char value);
+	void set_root_value(char value);
+	char get_left_node();
+	char get_right_node();
+};
 
 #endif

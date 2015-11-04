@@ -1,4 +1,6 @@
 #include "tree.h"
+#include <iostream>
+#include <stdlib.h>
 
 tree::tree()	
 {
@@ -12,13 +14,24 @@ tree::tree(char value)
 	left = 0;
 	right = 0;
 }
-
-void tree::set_left()
+void tree::add_left_node(char value)
 {
-	left = 
+	if (left != 0)
+	{
+		std::cout << "Tried overwriting left node, exiting\n";
+		exit(-1);
+	}
+	left = new tree(value);
 }
-
-void tree::set_right(tree root, char value)
+void tree::add_right_node(char value)
 {
-	root.right(value);
+	if (right != 0)
+	{
+		std::cout << "tried overwriting right node, exiting\n";
+		exit(-1);
+	}
+	right = new tree(value);
 }
+void tree::set_root_value(char value)		{root = value;}
+char tree::get_left_node()			{return left->root;}
+char tree::get_right_node()			{return right->root;}
