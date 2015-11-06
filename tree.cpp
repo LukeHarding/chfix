@@ -10,18 +10,18 @@ tree::tree()
 }
 tree::tree(char value)	
 {
-	root = value;
-	left = 0;
-	right = 0;
+  this->root  = value;
+  this->left  = NULL;
+  this->right = NULL;
 }
 void tree::add_left_node(char value)
 {
-	if (left != 0)
-	{
-		std::cout << "Tried overwriting left node, exiting\n";
-		exit(-1);
-	}
-	left = new tree(value);
+  if (left != 0)
+    {
+      std::cout << "Tried overwriting left node, exiting\n";
+      exit(-1);
+    }
+  left = new tree(value);
 }
 void tree::add_right_node(char value)
 {
